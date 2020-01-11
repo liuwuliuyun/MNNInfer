@@ -14,6 +14,7 @@
 #include <vector>
 #include <memory>
 #include <chrono>
+#include <opencv2/opencv.hpp>
 
 class Landmark {
     public:
@@ -21,7 +22,7 @@ class Landmark {
     Landmark(const std::string &mnn_path, int input_size = 256, int num_thread_ = 4);
     ~Landmark();
 
-    int generate_landmark(const uint8_t* img, std::vector<float> &landmarks);
+    int generate_landmark(cv::Mat &img, std::vector<float> &landmarks);
 
     private:
 
